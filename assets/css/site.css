@@ -1,0 +1,65 @@
+:root {
+  --maroon: #800000;
+  --maroon-bright: #a31d2b;
+  --bg: #0b0b0c;
+  --bg-2: #141416;
+  --text: #d9d6d2;
+  --muted: #8b8784;
+  --bulma-body-background-color: var(--bg);
+  --bulma-body-color: var(--text);
+  --bulma-link: var(--maroon-bright);
+}
+html, body { background: var(--bg); color: var(--text); font-family: "Inter", system-ui, sans-serif; }
+.title, .brand, .hero-title { font-family: "Space Grotesk", sans-serif; color: #fff; letter-spacing: .04em; }
+a { color: var(--maroon-bright); }
+a:hover { color: #fff; }
+
+.site-nav { background: rgba(11, 11, 12, .85); backdrop-filter: blur(10px); border-bottom: 1px solid #1f1f22; }
+.site-nav .navbar-item { color: var(--text); text-transform: uppercase; font-size: .85rem; letter-spacing: .15em; }
+.site-nav .navbar-item:hover, .site-nav .navbar-item.is-active { background: transparent; color: #fff; box-shadow: inset 0 -2px 0 var(--maroon-bright); }
+.site-nav .brand { font-weight: 700; font-size: 1.1rem; }
+.navbar-menu { background: transparent; }
+.navbar-burger { color: #fff; }
+@media (max-width: 1023px) { .navbar-menu.is-active { background: var(--bg-2); } }
+
+.hero-photo {
+  margin-top: 3.25rem;
+  background: linear-gradient(180deg, rgba(11,11,12,.2), var(--bg)), linear-gradient(90deg, rgba(128,0,0,.55), transparent 70%), url("../img/photos/photo-01.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  min-height: 60vh; display: flex; justify-content: flex-end;
+}
+.hero-title { font-size: clamp(2.5rem, 8vw, 6rem) !important; font-weight: 700; }
+.hero-sub { color: var(--text) !important; text-transform: uppercase; letter-spacing: .25em; font-size: .9rem; }
+
+.section-title { border-left: 4px solid var(--maroon-bright); padding-left: .75rem; }
+.lead { font-size: 1.35rem; color: #fff; font-weight: 300; margin-bottom: 1rem; }
+.page { animation: fade .35s ease; }
+@keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+.button.is-maroon, .tag.is-maroon { background: var(--maroon); color: #fff; border: none; }
+.button.is-maroon:hover { background: var(--maroon-bright); }
+.tag.is-maroon { background: rgba(128,0,0,.35); border: 1px solid var(--maroon); }
+
+.sc-player { width: 100%; height: 450px; border-radius: 6px; }
+.sc-feature { width: 100%; height: 320px; border-radius: 6px; display: block; }
+
+.timeline { border-left: 2px solid var(--maroon); margin-left: .5rem; }
+.tl-item { position: relative; padding: 0 0 1.5rem 1.5rem; }
+.tl-item::before { content: ""; position: absolute; left: -7px; top: .35rem; width: 12px; height: 12px; border-radius: 50%; background: var(--maroon-bright); }
+.tl-year { font-family: "Space Grotesk", sans-serif; color: #fff; font-weight: 700; }
+
+.project-card { display: block; background: var(--bg-2); color: var(--text); border: 1px solid #222; transition: transform .2s, border-color .2s; height: 100%; }
+.project-card:hover { transform: translateY(-4px); border-color: var(--maroon-bright); color: var(--text); }
+.project-card .image img { object-fit: cover; }
+.link-out { color: var(--maroon-bright); margin-top: 1rem; font-weight: 600; }
+
+.gallery { columns: 3 260px; column-gap: 1rem; }
+.gallery img { width: 100%; margin-bottom: 1rem; border-radius: 4px; cursor: zoom-in; filter: grayscale(.3); transition: filter .2s; break-inside: avoid; }
+.gallery img:hover { filter: none; }
+#lightbox .modal-content { width: auto; max-width: 92vw; }
+#lightbox img { max-height: 88vh; display: block; margin: auto; }
+
+.site-footer { background: var(--bg-2); color: var(--muted); padding: 2.5rem 1.5rem; }
+.site-footer a { color: var(--text); }
